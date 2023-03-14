@@ -1,0 +1,16 @@
+﻿@model IEnumerable<BTVN_B5_2.Models.Book>
+
+@{
+    ViewBag.Title = "GetCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetCategory</h2>
+
+<h1>Chủ đề</h1>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@Html.ActionLink(item.Category.CategoryName, "GetBookByCategory/" + item.CategoryId, "Book") </li>
+    }
+</ul>
